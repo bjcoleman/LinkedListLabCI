@@ -16,4 +16,16 @@ public class SortedLinkedListTest extends TestCase
     assertEquals(null, l.getName(0));
     assertEquals(-1, l.getQuantity(0));
   }  
+  
+  public void testSingleElement()
+  {
+    SortedLinkedList l = new SortedLinkedList();
+    l.insert("foo", 42);
+    
+    assertEquals(1, l.length());
+    assertTrue(l.isMember("foo"));
+    assertFalse(l.isMember("bar"));
+    assertEquals("foo", l.getName(0));
+    assertEquals(42, l.getQuantity(0));
+  }
 }
